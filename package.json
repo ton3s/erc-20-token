@@ -10,7 +10,7 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"@truffle/hdwallet-provider": "^1.2.4",
-		"dotenv": "^8.2.0"
+		"dotenv": "^8.2.0",
+		"truffle-hdwallet-provider": "^1.0.17"
 	}
 }

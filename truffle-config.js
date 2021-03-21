@@ -1,5 +1,5 @@
 require('dotenv').config()
-const HDWalletProvider = require('@truffle/hdwallet-provider')
+const HDWalletProvider = require('truffle-hdwallet-provider')
 
 module.exports = {
 	// Network to send smart contracts to
@@ -24,7 +24,7 @@ module.exports = {
 		ropsten: {
 			provider: function () {
 				return new HDWalletProvider(
-					process.env.BLOCKCHAIN_PRIVATE_KEY,
+					[process.env.BLOCKCHAIN_PRIVATE_KEY],
 					`https://ropsten.infura.io/v3/${process.env.INFURA_ID}`
 				)
 			},
