@@ -3,6 +3,11 @@
 ### Tokens minted
 
 ```
+name:         FUNREWARDS
+symbol        FUN
+decimal:      8
+contract:     0x140CA1B2b09C9f885F3773Df352977d794BA37EC
+
 name:         MUSCLETEAM
 symbol        MARIO
 decimal:      8
@@ -21,21 +26,19 @@ contract:     0x918837C560c75De6D38BA43A51eF9954f96ec481
 ❯ truffle console --network rinkeby
 truffle(rinkeby)> networks
 
-Network: develop (id: 5777)
-  No contracts deployed.
-
 Network: rinkeby (id: 4)
+  FUNREWARDS: 0x140CA1B2b09C9f885F3773Df352977d794BA37EC
   MARIO: 0x02297bDE3eC529f70E172ef51E03de14b0258917
   THUG: 0x918837C560c75De6D38BA43A51eF9954f96ec481
-
-Network: ropsten (id: 3)
-  No contracts deployed.
 
 truffle(rinkeby)> let mario = await MARIO.deployed()
 truffle(rinkeby)> mario.mint("0x39010B2C68DA9C66A71908a588dc1d3BbF61073e", 10000000 * 10 ** 8)
 
 truffle(rinkeby)> let thug = await THUG.deployed()
 truffle(rinkeby)> thug.mint("0x39010B2C68DA9C66A71908a588dc1d3BbF61073e", 10000000 * 10 ** 8)
+
+truffle(rinkeby)> let funrewards = await FUNREWARDS.deployed()
+truffle(rinkeby)> funrewards.mint("0x39010B2C68DA9C66A71908a588dc1d3BbF61073e", 10000000 * 10 ** 8)
 
 ```
 
@@ -46,22 +49,7 @@ truffle(rinkeby)> thug.mint("0x39010B2C68DA9C66A71908a588dc1d3BbF61073e", 100000
 
 Compiling your contracts...
 ===========================
-> Compiling ./contracts/ERC20.sol
-> Compiling ./contracts/ERC20Burnable.sol
-> Compiling ./contracts/ERC20Combined.sol
-> Compiling ./contracts/ERC20Detailed.sol
-> Compiling ./contracts/ERC20Mintable.sol
-> Compiling ./contracts/MinterRole.sol
-> Compiling ./contracts/interfaces/IERC20.sol
-> Compiling ./contracts/libraries/Context.sol
-> Compiling ./contracts/libraries/Roles.sol
-> Compiling ./contracts/libraries/SafeMath.sol
-> Compiling ./contracts/tokens/MARIO.sol
-> Compiling ./contracts/tokens/THUG.sol
-> Artifacts written to /Users/antoniocunanan/Desktop/code/blockchain/erc20/erc-20-token/build/contracts
-> Compiled successfully using:
-   - solc: 0.5.16+commit.9c3226ce.Emscripten.clang
-
+> Everything is up to date, there is nothing to compile.
 
 
 Starting migrations...
@@ -74,50 +62,25 @@ Starting migrations...
 1_deploy_contracts.js
 =====================
 
-   Deploying 'MARIO'
-   -----------------
-   > transaction hash:    0xb9c740f1fba935550fa383300032453ff83a9c1377d4aa405e0b098d1e99d412
-   > Blocks: 0            Seconds: 8
-   > contract address:    0x02297bDE3eC529f70E172ef51E03de14b0258917
-   > block number:        8273951
-   > block timestamp:     1616342532
+   Deploying 'FUNREWARDS'
+   ----------------------
+   > transaction hash:    0xf90fc29060fd3aadc85a3dd9d1f06bbc548ea51546503ad27cca24c10e8f3567
+   > Blocks: 0            Seconds: 4
+   > contract address:    0x140CA1B2b09C9f885F3773Df352977d794BA37EC
+   > block number:        8274095
+   > block timestamp:     1616344692
    > account:             0x39010B2C68DA9C66A71908a588dc1d3BbF61073e
-   > balance:             57.76786715
-   > gas used:            805944 (0xc4c38)
+   > balance:             57.73295291
+   > gas used:            805932 (0xc4c2c)
    > gas price:           20 gwei
    > value sent:          0 ETH
-   > total cost:          0.01611888 ETH
+   > total cost:          0.01611864 ETH
 
    Pausing for 2 confirmations...
    ------------------------------
-   > confirmation number: 1 (block: 8273952)
-   > confirmation number: 2 (block: 8273953)
-
-   Deploying 'THUG'
-   ----------------
-   > transaction hash:    0xa4d0bea672e84fb1e8c31a184206ad59b48219175490d6589152ebd4b985930d
-   > Blocks: 0            Seconds: 8
-   > contract address:    0x918837C560c75De6D38BA43A51eF9954f96ec481
-   > block number:        8273954
-   > block timestamp:     1616342577
-   > account:             0x39010B2C68DA9C66A71908a588dc1d3BbF61073e
-   > balance:             57.75174971
-   > gas used:            805872 (0xc4bf0)
-   > gas price:           20 gwei
-   > value sent:          0 ETH
-   > total cost:          0.01611744 ETH
-
-   Pausing for 2 confirmations...
-   ------------------------------
-   > confirmation number: 1 (block: 8273955)
-   > confirmation number: 2 (block: 8273956)
+   > confirmation number: 1 (block: 8274096)
+   > confirmation number: 2 (block: 8274097)
    > Saving artifacts
    -------------------------------------
-   > Total cost:          0.03223632 ETH
-
-
-Summary
-=======
-> Total deployments:   2
-> Final cost:          0.03223632 ETH
+   > Total cost:          0.01611864 ETH
 ```
