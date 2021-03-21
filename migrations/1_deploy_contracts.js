@@ -1,7 +1,7 @@
-const ERC20Combined = artifacts.require('ERC20Combined')
+const MARIO = artifacts.require('MARIO')
+const THUG = artifacts.require('THUG')
 
 module.exports = function (deployer) {
-	deployer.deploy(ERC20Combined, 'FUNREWARDS', 'FR', 18)
-	deployer.deploy(ERC20Combined, 'MUSCLETEAM', 'MARIO', 18)
-	deployer.deploy(ERC20Combined, 'THUG', 'THUG', 18)
+	deployer.deploy(MARIO, 'MUSCLETEAM', 'MARIO', 8)
+	deployer.deploy(THUG, 'THUG', 'THUG', 8)
 }
